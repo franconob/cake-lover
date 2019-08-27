@@ -1,9 +1,15 @@
-import { ICake } from '../../models/cake';
+import { ICake } from "../../models/cake";
 
 export interface ICakeState {
-    list: ICake[];
+  cakeMap: { [cakeId: string]: ICake };
+  currentCakeId: string | null;
+  isLoadingMap: boolean;
+  isLoadingCake: boolean;
 }
 
-export const initalState = {
-    list: []
+export const initialState = {
+  cakeMap: {},
+  currentCakeId: null,
+  isLoadingCake: false,
+  isLoadingMap: false
 };

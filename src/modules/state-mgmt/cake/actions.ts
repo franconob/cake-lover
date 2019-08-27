@@ -1,10 +1,14 @@
+import { ICake } from "../../models/cake";
+
 export enum ActionType {
-  CREATE_CAKE_START = "[cake] create start"
+  FETCH_LIST_SUCCESS = '[cake] fetch list success',
+  CREATE_CAKE_START = "[cake] create start",
+  FETCH_CACKE_SUCCESS = "[cake] fetch success",
+  IS_LOADING_CAKE = "[cake] loading cake"
 }
 
 export default {
-  createCakeStart: (name: string, comment: string, yumFactor: number) => ({
-    type: ActionType.CREATE_CAKE_START,
-    payload: { name, comment, yumFactor }
-  })
+  fetchListSuccess: (list: ICake[]) => ({ type: ActionType.FETCH_LIST_SUCCESS, payload: { list }}),
+  fetchSuccess: (cake: ICake) => ({ type: ActionType.FETCH_CACKE_SUCCESS, payload: { cake }}),
+  isLoadingCake: (isLoading: boolean) => ({ type: ActionType.IS_LOADING_CAKE, payload: { isLoading }})
 };
