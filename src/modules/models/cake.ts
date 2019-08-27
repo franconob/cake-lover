@@ -1,5 +1,5 @@
 export interface ICake {
-    id: number;
+    id: string;
     name: string;
     comment: string;
     imageUrl: string;
